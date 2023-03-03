@@ -11,18 +11,18 @@ def factorial(n):
         return n * factorial(n - 1)
 
 
-def exponential_fn(x):
-    e_x = 1
-    exponentials = []
+def taylor_expansion(x):
+    exponential_sum = 1
+    exponential_terms = []
 
     for i in range(1, 10):
-        exponentials.append(e_x)
+        exponential_terms.append(exponential_sum)
         e_xi = (np.power(x, i) / factorial(i))
-        e_x += e_xi
+        exponential_sum += e_xi
 
-    return exponentials
+    return exponential_terms
 
 
 x = 1
-plt.plot(exponential_fn(x))
+plt.plot(taylor_expansion(x))
 plt.show()
